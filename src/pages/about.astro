@@ -1,8 +1,7 @@
 ---
 //here are imported the components
 import "../styles/global.css";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 // here are defined all the variables of the astro code
 
 const pageTitle = "About Me";
@@ -25,74 +24,18 @@ const skills = [
   "mongodb",
   "nodejs",
 ];
-
-const happy = true;
-const finished = false;
-const goal = 3;
-
-//style variables
-
-const skillColor = "orange";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-
-    <!--Styles -->
-    <style define:vars={{ skillColor, fontWeight, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <h1>{pageTitle}</h1>
-    <h2 class="personal">Hi, My name is {identity.firstname}</h2>
-    <p>
-      i'm a {identity.occupation} and i'm from {identity.country}, my hobbys
-      are:
-    </p>
-    <ul>
-      {identity.hobby.map((item) => <li class="skill">{item}</li>)}
-    </ul>
-    <h2>Two of My Skills are:</h2>
-    <ul>
-      {
-        skills.length >= 2 && (
-          <li class="skill">
-            {skills[2]} and {skills[3]}
-          </li>
-        )
-      }
-    </ul>
-
-    {happy == true && <p>I'm happy to be learning Astro!!</p>}
-    {finished && <p>I finished the Tutorial!!</p>}
-    {
-      goal == 3 ? (
-        <p>My goal is finish in 3 days.</p>
-      ) : (
-        <p>My Goal is not 3 days!!</p>
-      )
+<BaseLayout pageTitle={pageTitle}>
+  <h2>Hi, my name is {identity.firstname}, i'm from {identity.country}</h2>
+  <p>
+    I´m a {identity.occupation}, and my hobbys are {
+      identity.hobby.map((item) => <span>{item} </span>)
     }
+  </p>
 
-    <Footer />
-    <script>
-      import "../scripts/menu.js";
-    </script>
-  </body>
-</html>
+  <h2>Some skills:</h2>
+  <ul>
+    {skills.length > 2 && skills.map((skill) => <li>{skill}</li>)}
+  </ul>
+</BaseLayout>

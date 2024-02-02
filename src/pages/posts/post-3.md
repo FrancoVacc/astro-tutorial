@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: My Therd Blog Post
 author: 'Vaccari, Franco'
 description: "After learning some Astro, I couldn't stop!"
@@ -8,7 +9,7 @@ image:
 pubDate: 2024-02-01
 tags: ["astro", "blogging", "learning in public", "successes"]
 ----
--
+
 <!---Títulos--->
 
 # Título h1
