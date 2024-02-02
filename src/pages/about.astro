@@ -1,6 +1,8 @@
 ---
 //here are imported the components
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 // here are defined all the variables of the astro code
 
 const pageTitle = "About Me";
@@ -57,13 +59,7 @@ const textCase = "uppercase";
     </style>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
+    <Header />
     <h1>{pageTitle}</h1>
     <h2 class="personal">Hi, My name is {identity.firstname}</h2>
     <p>
@@ -93,5 +89,10 @@ const textCase = "uppercase";
         <p>My Goal is not 3 days!!</p>
       )
     }
+
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>
