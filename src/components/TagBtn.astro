@@ -1,0 +1,14 @@
+---
+const { tag, url } = Astro.props;
+---
+
+<a href={url}>#{tag}</a>
+<style>
+  a {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #911d95;
+    text-decoration: none;
+    border-radius: 5%;
+  }
+</style>

@@ -90,3 +90,15 @@ h1 {
   font-weight: bold;
   text-transform: uppercase;
 }
+
+.post{
+  padding: 1rem;
+  border: 1px solid gray;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.post h3{
+  color: purple;
+  font-weight: bold;
+}

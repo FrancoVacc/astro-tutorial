@@ -7,7 +7,7 @@ image:
     url: "https://docs.astro.build/assets/arc.webp"
     alt: "Thumbnail of Astro arcs."
 pubDate: 2024-02-01
-tags: ["astro", "blogging", "learning in public", "successes"]
+tags: [ "blogging", "learning in public"]
 ----
 
 <!---Títulos--->
