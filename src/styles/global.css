@@ -102,3 +102,12 @@ h1 {
   color: purple;
   font-weight: bold;
 }
+
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
+.dark .nav-links a {
+  color: #fff;
+}
